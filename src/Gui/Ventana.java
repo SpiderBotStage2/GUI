@@ -8,9 +8,8 @@ package Gui;
 import Logica.Arbol_splay;
 import Logica.ListaSdoble;
 import Logica.Nodo;
-import Logica.NodoB;
 import Logica.datos;
-
+import Logica.Cliente;
 /**
  *
  * @author osboxes
@@ -25,6 +24,8 @@ public class Ventana extends javax.swing.JFrame {
     private Arbol_splay _busquedas;
     private datos _dp;
     private connect _ct;
+    private String _mensaje="";
+    private Cliente _cl;
     
     public Ventana() {
         _ayuda= new Help();
@@ -122,7 +123,6 @@ public class Ventana extends javax.swing.JFrame {
 
     private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
         // TODO add your handling code here:
-        System.out.println(_dp._ip+ "  "+ _dp._puerto);
         if(SearchInput.getText().isEmpty()){
             
         }
@@ -138,7 +138,7 @@ public class Ventana extends javax.swing.JFrame {
 
     private void OPConnectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OPConnectActionPerformed
         // TODO add your handling code here:
-        //connect.setVisible(true);
+        _ct.setVisible(true);
     }//GEN-LAST:event_OPConnectActionPerformed
 
     private void OPHelpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OPHelpActionPerformed
@@ -153,16 +153,10 @@ public class Ventana extends javax.swing.JFrame {
     }//GEN-LAST:event_OPOutActionPerformed
 
     private void search() {
-        NodoB tmp =_busquedas.getRoot();
-        searchAux(tmp);
-    }
-    
-    private void searchAux(NodoB pNodo){
-        if (pNodo!=null)
-            return;
-        searchAux(pNodo.getHizq());
-        //aqui va la vara para realizar busqueda
-        searchAux(pNodo.getHder());
+        _cl=new Cliente(_dp);
+        _cl.start();
+        _cl.sendMsg(_mensaje);
+        _cl.sendMsg("out");
     }
     
     private void getTexto(){
@@ -193,13 +187,13 @@ public class Ventana extends javax.swing.JFrame {
     private void insertToTree(ListaSdoble pPalabras){
         Nodo tmp =pPalabras.getHead();
         while(tmp!=null){
-            if(tmp.getData().compareTo(" ")!=0)
+            if(tmp.getData().compareTo(" ")!=0){
                 _busquedas.insert(tmp.getData());
+                _mensaje+=(String)tmp.getData();
+                if(tmp.getNext()!=null)
+                    _mensaje+=",";
+            }
         }
-    }
-    
-    private void setInfo(){
-        
     }
     
     /**

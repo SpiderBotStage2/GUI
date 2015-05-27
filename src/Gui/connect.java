@@ -85,8 +85,8 @@ public class connect extends javax.swing.JFrame {
         // TODO add your handling code here:
         this._ip=ip.getText();
         this._puerto=Integer.parseInt(puerto.getText());
-        this._dp._ip=_ip;
-        this._dp._puerto=_puerto;
+        this._dp.ip=_ip;
+        this._dp.puerto=_puerto;
     }//GEN-LAST:event_conectarActionPerformed
 
     public void setDato(datos dp){

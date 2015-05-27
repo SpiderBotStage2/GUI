@@ -10,6 +10,8 @@ package Logica;
  * @author osboxes
  */
 public class datos {
-    public int _puerto=0;
-    public String _ip="";
+    public int puerto=0;
+    public String ip="";
+    public String FileName="";
+    
 }
