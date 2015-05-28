@@ -22,8 +22,7 @@ import Logica.SeleccionComoAbrirUrl;
 
 public class VentanaOpciones extends JPanel {
 
-  String arregloConElementos[] = { "https://www.google.com/?gws_rd=ssl", "One", "Two", "Three", "Four", "Five", "Six",
-      "Seven", "Eight", "Nine", "Ten", "Eleven"};
+  String arregloConElementos[] = { "https://www.google.com/?gws_rd=ssl", "One", "Two"};
 
   JList listaConUrls;
 

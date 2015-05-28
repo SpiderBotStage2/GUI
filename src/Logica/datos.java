@@ -13,5 +13,6 @@ public class datos {
     public int puerto=0;
     public String ip="";
     public String FileName="";
+    public String arregloConElementos[] = {};
     
 }
