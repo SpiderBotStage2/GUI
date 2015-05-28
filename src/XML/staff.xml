@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<root>
+	<palabra id="1001">
+		<url>www.wikipedia.com</url>
+		
+	</palabra>
+	<palabra id="2001">
+		<url>www.wiki.com</url>
+		
+	</palabra>
+</root>
