@@ -5,9 +5,9 @@
  */
 package Gui;
 
-import Logica.Arbol_splay;
-import Logica.ListaSdoble;
-import Logica.Nodo;
+import Arboles.Arbol_splay;
+import Lista.ListaSdoble;
+import Lista.Nodo;
 import Logica.datos;
 import Logica.Cliente;
 /**
